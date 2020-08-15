@@ -2,7 +2,7 @@ package br.com.projetojsf;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean(name = "pessoaBean")
+@ManagedBean(name = "pessoaBean") // controlador de página JSF
 public class PessoaBean {
 
 	private String nome;
