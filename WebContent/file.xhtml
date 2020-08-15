@@ -8,8 +8,14 @@
 
 <h:body>
 	<h:form id="formPessoa">
-		<h:inputText id="campoNome"></h:inputText>
+		
+		<h1>Olá JSF</h1>
+		
+		<h:inputText id="campoNome" value="#{pessoaBean.nome}"></h:inputText>
+		<br/> 
 		<h:outputText value="Teste JSF"></h:outputText>
+		<br/>
+		<h:commandButton value="Botão"></h:commandButton>
 	</h:form>
 </h:body>
 
