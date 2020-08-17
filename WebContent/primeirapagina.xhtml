@@ -10,18 +10,20 @@
 	<h:form id="formPessoa">
 
 		<h1>Olá JSF</h1>
+
+		<h:outputText value="Nome:" />
+		<h:inputText value="#{pessoaBean.pessoa.nome}" />
+		<br/>
+		<h:outputText value="Sobrenome:" />
+		<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
+		<br/>
+		<h:outputText value="Idade:" />
+		<h:inputText value="#{pessoaBean.pessoa.idade}" />
+		<br/>
 		
-		Nome:
-		<h:inputText id="campoNome" value="#{pessoaBean.nome}" />
-		<br />
+		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
 
-		<h:commandButton binding="#{pessoaBean.commandButton}" value="Adicionar Nomes" action="#{pessoaBean.addNome}" />
 
-		<h:dataTable value="#{pessoaBean.nomes}" var="nome">
-			<h:column>
-				<h:outputText value="#{nome}" />
-			</h:column>
-		</h:dataTable>
 	</h:form>
 </h:body>
 
