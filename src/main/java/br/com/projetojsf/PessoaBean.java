@@ -21,6 +21,7 @@ public class PessoaBean {
 		nomes.add(nome);
 		if (nomes.size() >= 3) {
 			commandButton.setDisabled(true);
+			return "navegacao?faces-redirect=true";
 		}
 		return "";
 
