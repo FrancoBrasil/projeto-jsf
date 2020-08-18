@@ -15,19 +15,27 @@
 		<h:graphicImage height="50" width="50" library="img" name="register.png"/>
 		<h:panelGrid columns="2">
 			<f:facet name="header">
-				<h:outputText value="Cadastro em JSF" />
+				<h:outputText value="Cadastro em JSF"/>
 			</f:facet>
-			<h:outputLabel value="Id:" />
-			<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true" />
+			<h:outputLabel value="Id:"/>
+			<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true"/>
 
-			<h:outputLabel value="Nome:" />
+			<h:outputLabel value="Nome:"/>
 			<h:inputText value="#{pessoaBean.pessoa.nome}" />
 
-			<h:outputLabel value="Sobrenome:" />
-			<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
+			<h:outputLabel value="Sobrenome:"/>
+			<h:inputText value="#{pessoaBean.pessoa.sobrenome}"/>
 
-			<h:outputLabel value="Idade:" />
-			<h:inputText value="#{pessoaBean.pessoa.idade}" />
+			<h:outputLabel value="Idade:"/>
+			<h:inputText value="#{pessoaBean.pessoa.idade}"/>
+			
+			<h:outputLabel value="Sexo:"/>
+			
+			<h:selectOneMenu id="campoSexo" value="#{pessoaBean.pessoa.sexo}" required="true">
+				<f:selectItem itemValue="NAO" itemLabel="[--Selecione--]" noSelectionOption="true"/>
+				<f:selectItem itemValue="M" itemLabel="Masculino"/>
+				<f:selectItem itemValue="F" itemLabel="Feminino"/>
+			</h:selectOneMenu>
 
 			<h:outputLabel />
 			<h:panelGroup>
