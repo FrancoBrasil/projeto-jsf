@@ -12,23 +12,32 @@
 	<h:form id="formPessoa">
 
 		<h1>Olá JSF</h1>
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputText value="Cadastro em JSF" />
+			</f:facet>
+			<h:outputLabel value="Id:" />
+			<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true" />
 
-		<h:outputLabel value="Id:" />
-		<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true" />
-		<br />
-		<h:outputLabel value="Nome:" />
-		<h:inputText value="#{pessoaBean.pessoa.nome}" />
-		<br />
-		<h:outputLabel value="Sobrenome:" />
-		<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
-		<br />
-		<h:outputLabel value="Idade:" />
-		<h:inputText value="#{pessoaBean.pessoa.idade}" />
-		<br />
+			<h:outputLabel value="Nome:" />
+			<h:inputText value="#{pessoaBean.pessoa.nome}" />
 
-		<h:commandButton value="Deletar" action="#{pessoaBean.remove}" />
-		<h:commandButton value="Novo" action="#{pessoaBean.novo}" />
-		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
+			<h:outputLabel value="Sobrenome:" />
+			<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
+
+			<h:outputLabel value="Idade:" />
+			<h:inputText value="#{pessoaBean.pessoa.idade}" />
+			
+			<h:outputLabel/>
+			<h:panelGroup>
+				<h:commandButton value="Deletar" action="#{pessoaBean.remove}" />
+				<h:commandButton value="Novo" action="#{pessoaBean.novo}" />
+				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
+			</h:panelGroup>
+
+		</h:panelGrid>
+
+
 
 		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
 			<h:column>
@@ -53,7 +62,7 @@
 						target="#{pessoaBean.pessoa}"></f:setPropertyActionListener>
 				</h:commandLink>
 			</h:column>
-			
+
 			<h:column>
 				<h:commandLink value="Excluir" action="#{pessoaBean.remove}">
 					<f:setPropertyActionListener value="#{pessoa}"
